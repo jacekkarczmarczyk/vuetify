@@ -20,7 +20,6 @@ export default {
       type: [Number, String],
       default: 0
     },
-    disableHover: Boolean,
     fixed: {
       type: Boolean,
       default: true
@@ -145,7 +144,7 @@ export default {
         }
       }, [tooltip]),
       h('span', {
-        on: this.disableHover ? {} : {
+        on: this.value == null && {
           mouseenter: () => {
             clearTimeout(this.leaveTimeout)
 
